@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div class="container">
+        <div className="container">
             <h1>Welcome to my landing page!</h1>
             
             <p>Have a look around, this place is relatively empty due to a lack of <br/> 
@@ -8,7 +8,7 @@ const Home = () => {
             </p>
             <img id="dancing-link" src="../content/Link Dancing.gif" alt="A picture of link from the Legend of Zelda™ doing a dance."/>
 
-            <div class="footer">
+            <div className="footer">
                 <p>Thanks for visiting!</p>
             </div>
         </div>    
