@@ -10,7 +10,7 @@ const About = () => {
 
             <div className="skills-content">
                 <p id="skills-title">
-                    Skills
+                    <u>Skills</u>
                 </p>
                 <ul id="skills-list">
                     <li id="skills-item">C++</li>
@@ -24,7 +24,7 @@ const About = () => {
 
             <div className="interest-content">
                 <p className="interest-title">
-                    Interests
+                    <u>Interests</u>
                 </p>
                 
                 <ul id="interest-list">
