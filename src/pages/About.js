@@ -27,29 +27,17 @@ const About = () => {
                     Interests
                 </p>
                 
-                <table id="interest-list">
-                    <tbody>
-                        <tr>
-                            <td id="interest-item">3D Printing</td>
-                            <td id="interest-item">Painting</td>
-                            <td id="interest-item">Origami</td>
-                        </tr>
-                        <tr>
-                            <td id="interest-item">The Legend of Zelda</td>
-                            <td id="interest-item">Programming</td>
-                        </tr>
-                        <tr>
-                            <td id="interest-item">Biking</td>
-                            <td id="interest-item">Roller Blading</td>
-                        </tr>
-                        <tr>
-                            <td id="interest-item">Electronic Dance Music</td>
-                            <td id="interest-item">Anime</td>
-                        </tr>
-                    </tbody>
-                    
-                    
-                </table>
+                <ul id="interest-list">
+                    <li id="interest-item">3D Printing</li>
+                    <li id="interest-item">Painting</li>
+                    <li id="interest-item">Origami</li>
+                    <li id="interest-item">The Legend of Zelda</li>
+                    <li id="interest-item">Programming</li>
+                    <li id="interest-item">Biking</li>
+                    <li id="interest-item">Roller Blading</li>
+                    <li id="interest-item">Electronic Dance Music</li>
+                    <li id="interest-item">Anime</li>
+                </ul>
             </div>
 
             <ul className="status-content">
