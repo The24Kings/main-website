@@ -21,6 +21,10 @@ const Layout = () => {
       </div>
       
       <Outlet />
+
+      <div className="footer">
+        <p>Thanks for visiting!</p>
+      </div>
     </div>
   )
 };
