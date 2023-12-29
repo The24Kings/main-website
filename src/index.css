@@ -116,6 +116,10 @@ body {
   color: #a1a1a1;
 }
 
+.error {
+  padding-top: 3%;
+}
+
 /* Skills */
 
 .skills-content {
