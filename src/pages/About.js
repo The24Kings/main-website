@@ -1,11 +1,11 @@
 const About = () => {
     return (
         <div className="container">
-            <h1 id="about-header">It's Me!</h1>
+            <h1 id="about-header">Hello!</h1>
 
             <p id="about-content">
-                My name is <u>Riley</u> and I'm a software developer from Washington. <br/> <br/>
-                I am a studying in Computer Science, a cronic cat dad and my pronouns are <u>he/him</u>.
+                My name is <u>Riley</u>, my pronouns are <u>he/him</u>, and I'm a software developer from Washington. <br/> <br/>
+                Currently I am studying Computer Science at [REDACTED] and I am cronic cat dad.
             </p>
 
             <div className="skills-content">
@@ -41,9 +41,9 @@ const About = () => {
             </div>
 
             <ul className="status-content">
-                <h2>
-                    Status Updates
-                </h2>
+                <h1>
+                    <u>Status Updates</u>
+                </h1>
 
                 <li>
                     <strong><u>Nov 2023:</u></strong> <br/> <br/>
@@ -57,18 +57,11 @@ const About = () => {
                     I'm in the process of learning the Rust Programming Language. <br/>
                     The borrow checker/ ownership are intriguing aspects, but challenging to comprehend. <br/> <br/>
                 </li>
-                
-
-                
             </ul>
 
             <p id="secret">
                 If you know me IRL, shut up, no you don't.
             </p>
-
-            <div className="footer">
-                <p>Thanks for visiting!</p>
-            </div>
         </div>
     )
 };
