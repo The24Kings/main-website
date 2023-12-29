@@ -9,7 +9,8 @@ const Layout = () => {
             <li id="nav-item"><Link to="/">Home</Link></li>
             <li id="nav-item"><Link to="/about">About</Link> </li>
             <li id="nav-item"><Link to="/contact">Contact</Link></li>
-            <img id="logo" src="../content/24KingsUnite Logo.png" alt="A logo for 24KingsUnite"/>
+
+            <img id="logo" src={require("../content/Logo.png")} alt="A logo for 24KingsUnite"/>
           </ul>
         </nav>
       </div>

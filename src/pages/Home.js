@@ -6,7 +6,7 @@ const Home = () => {
             <p>Have a look around, this place is relatively empty due to a lack of <br/> 
                 web-dev skills. However, I do enjoy my fair share of Zelda™ memes!
             </p>
-            <img id="dancing-link" src="../content/Link Dancing.gif" alt="A picture of link from the Legend of Zelda™ doing a dance."/>
+            <img id="dancing-link" src={require("../content/Dance.gif")} alt="A picture of link from the Legend of Zelda™ doing a dance."/>
 
             <div className="footer">
                 <p>Thanks for visiting!</p>
