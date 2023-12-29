@@ -21,7 +21,7 @@ body {
 
 .top-bar {
   background-color: #393939;
-  height: 50px;
+  height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -114,6 +114,30 @@ body {
 
 .error {
   padding-top: 3%;
+}
+
+/* Cat Pictures */
+
+.picture-content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  background-color: #2c2c2c;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  margin-bottom: 1%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.picture-content::-webkit-scrollbar {
+  display: none;
+}
+
+#cat {
+  width: 30%;
+  height: auto;
+  padding: 10px;
 }
 
 /* Links */
