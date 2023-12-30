@@ -119,17 +119,13 @@ body {
 /* Cat Pictures */
 
 .picture-content {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-
   background-color: #2c2c2c;
   overflow: auto;
   white-space: nowrap;
   padding: 10px;
-  margin-bottom: 1%;
+  margin: 3%;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .picture-content::-webkit-scrollbar {
   width: 10px;
 }
