@@ -1,3 +1,11 @@
+import { MarkdownBlock, MarkdownSpan, MarkdownElement } from "https://md-block.verou.me/md-block.js";
+
+/* BROKEN
+    <div>
+        <md-block src="https://isoptera.lcsc.edu/~rjziegler/data/status.txt"/>
+    </div>
+ */
+
 const About = () => {
     return (
         <div className="container">
@@ -5,7 +13,7 @@ const About = () => {
 
             <p id="about-content">
                 My name is <u>Riley</u>, my pronouns are <u>he/him</u>, and I'm a software developer from Washington. <br/> <br/>
-                Currently I am studying Computer Science at [REDACTED] and I am cronic cat dad.
+                Currently I am studying Computer Science at [REDACTED] and I am a chronic cat dad.
             </p>
 
             <div className="skills-content">
