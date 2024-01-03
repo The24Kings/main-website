@@ -15,7 +15,7 @@ const Layout = () => {
             <li id="nav-item"><Link to="/about" className={location.pathname === "/about" ? "active" : null}>About</Link> </li>
             <li id="nav-item"><Link to="/contact" className={location.pathname === "/contact" ? "active" : null}>Contact</Link></li>
 
-            <img id="logo" src={require("../content/Logo.png")} alt="A logo for 24KingsUnite"/>
+            <a title="GitHub" href="https://github.com/The24Kings"><img id="logo" src={require("../content/Logo.png")} alt="A logo for 24KingsUnite"/></a>
           </ul>
         </nav>
       </div>
