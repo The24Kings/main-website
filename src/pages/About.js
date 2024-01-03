@@ -29,6 +29,7 @@ const About = () => {
                     <li id="skills-item">Git</li>
                     <li id="skills-item">HTML</li>
                     <li id="skills-item">Linux/ Unix Systems</li>
+                    <li id="skills-item">Operations Management</li>
                 </ul>
             </div>
 
