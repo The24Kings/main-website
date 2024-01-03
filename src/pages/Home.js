@@ -6,10 +6,12 @@ const Home = () => {
 
     return (
         <div className="container">
-            <h1>Welcome! Have a look around!</h1>
+            <h1>Welcome!</h1>
+            <h2>Have a look around!</h2>
             
-            <p>Have a look around, this place is relatively empty due to a lack of <br/> 
-                web-dev skills. However, I do enjoy my fair share of Zelda™ memes!
+            <p>
+                This website's main purpose is to be a portfolio and a place to show off my work. <br/>
+                Along with any other projects I may be working on or objects of interest I see fit. <br/>
             </p>
 
             <img id="dancing-link" src={require("../content/Dance.gif")} alt="A picture of link from the Legend of Zelda™ doing a dance."/>
