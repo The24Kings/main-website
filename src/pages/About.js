@@ -27,6 +27,8 @@ const About = () => {
                     <li id="skills-item">MySQL</li>
                     <li id="skills-item">Bash</li>
                     <li id="skills-item">Git</li>
+                    <li id="skills-item">HTML</li>
+                    <li id="skills-item">Linux/ Unix Systems</li>
                 </ul>
             </div>
 
@@ -40,10 +42,10 @@ const About = () => {
                     <li id="interest-item">Painting</li>
                     <li id="interest-item">Origami</li>
                     <li id="interest-item">The Legend of Zelda</li>
-                    <li id="interest-item">Programming</li>
+                    <li id="interest-item">Software Engineering</li>
                     <li id="interest-item">Biking</li>
                     <li id="interest-item">Roller Blading</li>
-                    <li id="interest-item">Electronic Dance Music</li>
+                    <li id="interest-item">EDM</li>
                     <li id="interest-item">Anime</li>
                 </ul>
             </div>
