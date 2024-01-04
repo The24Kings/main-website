@@ -68,6 +68,12 @@ const About = () => {
                     I'm in the process of learning the Rust Programming Language. <br/>
                     The borrow checker/ ownership are intriguing aspects, but challenging to comprehend. <br/> <br/>
                 </li>
+                <li>
+                    <strong><u>Jan 2024:</u></strong> <br/> <br/>
+                    I'm currently developing a <a href="https://github.com/The24Kings/rust-sudoku-solver">Sudoku Solver</a> in Rust. <br/><br/>
+                    I have previously attempted to make a <a href="https://github.com/The24Kings/SudokuSolver">Sudoku Solver</a> in Java, but I am I am not happy with the results. <br/>
+                    I am hoping to make a more efficient and elegant solution in Rust. <br/> <br/>
+                </li>
             </ul>
 
             <p id="secret">
