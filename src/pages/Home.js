@@ -1,8 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, use } from "react";
+import { Document, Page } from 'react-pdf';
+
+const options = {
+  cMapUrl: '/cmaps/',
+  standardFontDataUrl: '/standard_fonts/',
+};
+
+const maxWidth = 800;
 
 const Home = () => {
     const [ visible, setVisible ] = useState(false);
+    const [containerWidth, setContainerWidth] = useState<Number>(200);
+    const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
+
     const onClick = () => setVisible(!visible);
+
+    useEffect(() => {
+        if (containerRef) {
+            setContainerWidth(containerRef.clientWidth);
+        }
+    }, [containerRef]);
 
     return (
         <React.Fragment>
@@ -13,6 +30,17 @@ const Home = () => {
                 <p>
                     More will be added in the future, but for now feel free     to look around!
                 </p>
+
+                <div className="resume" ref={setContainerRef}>
+                    <Document file="https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf" options={options}>
+                        <Page 
+                            key={`page_1`}
+                            pageNumber={1} 
+                            width={containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth}
+                        />
+                    </Document>
+                </div>
+                
                 
                 <div className="show-gallery">
                     <input className="cat-button" type="button" value="Show me the cat!" onClick={onClick}/>
