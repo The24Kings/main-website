@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Layout = () => {
-
+const Header = () => {
   const location = useLocation();
 
   return (
-    <div>
+    <React.Fragment>
       <div className="top-bar">
         <nav className="header">
           <ul className="nav">
@@ -15,18 +14,12 @@ const Layout = () => {
             <li id="nav-item"><Link to="/about" className={location.pathname === "/about" ? "active" : null}>About</Link> </li>
             <li id="nav-item"><Link to="/contact" className={location.pathname === "/contact" ? "active" : null}>Contact</Link></li>
 
-            <a title="GitHub" href="https://github.com/The24Kings"><img id="logo" src={require("../content/Logo.png")} alt="A logo for 24KingsUnite"/></a>
+            <a title="GitHub" href="https://github.com/The24Kings"><img id="logo" src={require("../content/Logo.png")}/></a>
           </ul>
         </nav>
       </div>
-      
-      <Outlet />
-
-      <div className="footer">
-        <p>Thanks for visiting!</p>
-      </div>
-    </div>
+    </React.Fragment>
   )
 };
 
-export default Layout;
+export default Header;

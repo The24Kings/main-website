@@ -5,27 +5,27 @@ const Home = () => {
     const onClick = () => setVisible(!visible);
 
     return (
-        <div className="container">
-            <h1>Welcome!</h1>
-            <h2>Have a look around!</h2>
-            
-            <p>
-                This website's main purpose is to be a portfolio and a place to show off my work. <br/>
-                Along with any other projects I may be working on or objects of interest I see fit. <br/>
-            </p>
+        <React.Fragment>
+            <div className="container">
+                <h1>Welcome!</h1>
+                <h2>⚠ Under Construction ⚠</h2>
 
-            <img id="dancing-link" src={require("../content/Dance.gif")} alt="A picture of link from the Legend of Zelda™ doing a dance."/>
-            
-            <div className="show-gallery">
-                <input className="cat-button" type="button" value="Toggle Art Gallery" onClick={onClick}/>
-            </div>
+                <p>
+                    More will be added in the future, but for now feel free     to look around!
+                </p>
+                
+                <div className="show-gallery">
+                    <input className="cat-button" type="button" value="Show me the cat!" onClick={onClick}/>
+                </div>
 
-            { visible ? <Gallery /> : null}
-            
-        </div>    
+                { visible ? <Gallery /> : null}
+                
+            </div>  
+        </React.Fragment>  
     )
 };
 
+{/* TODO: Add more images that are not just the cat lol */}
 const Gallery = () => (
     <div className="display">
         <div className="picture-content">
