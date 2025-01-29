@@ -1,52 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 const About = () => {
+    const [ visible, setVisible ] = useState(false);
+    const [buttonName, setButtonName] = useState("Spoiler!");
+    const [arrow, setArrow] = useState("⮞");
+
+    const onSpoilerClick = () => {
+        setVisible(!visible);
+
+        if (visible) {
+            setButtonName("Spoiler!");
+            setArrow("⮞");
+        } else {
+            setButtonName("Hide");
+            setArrow("⮟");
+        }
+    }
+    
     return (
         <React.Fragment>
             <div className="container">
-                <h1 id="about-header">Greetings!</h1>
+                <h1 id="about-header">About me!</h1>
 
                 {/*TODO: Add a professional picture with a link to my resume */}
 
-                <p id="about-content">
-                    My name is Riley, I'm a software developer from Washington. <br/> <br/>
-                    Currently I am studying Computer Science at LCSC.
-                </p>
-
-                <div className="skills-content">
-                    <p id="skills-title">
-                        <u>Skills</u>
-                    </p>
-                    <ul id="skills-list">
-                        <li id="skills-item">Python</li>
-                        <li id="skills-item">C++</li>
-                        <li id="skills-item">C</li>
-                        <li id="skills-item">Rust</li>
-                        <li id="skills-item">Java</li>
-                        <li id="skills-item">MySQL</li>
-                        <li id="skills-item">Bash</li>
-                        <li id="skills-item">Git</li>
-                        <li id="skills-item">TCP/ UDP</li>
-                        <li id="skills-item">Linux/ Unix</li>
-                    </ul>
+                <div className="about">
+                    <h2 id="about-title">⮟ What do I do?</h2>
                 </div>
 
-                <div className="interest-content">
-                    <p className="interest-title">
-                        <u>Interests</u>
-                    </p>
-                    
-                    <ul id="interest-list">
-                        <li id="interest-item">3D Printing</li>
-                        <li id="interest-item">Painting</li>
-                        <li id="interest-item">Origami</li>
-                        <li id="interest-item">The Legend of Zelda</li>
-                        <li id="interest-item">Software Engineering</li>
-                        <li id="interest-item">Biking</li>
-                        <li id="interest-item">Roller Blading</li>
-                        <li id="interest-item">EDM</li>
-                        <li id="interest-item">Anime</li>
-                    </ul>
+                <div className="about-lists">
+                    <div className="list-content">
+                        <h3 className="list-title">
+                            <u>Skills</u>
+                        </h3>
+                        <ul id="list-items">
+                            <li id="item">Python</li>
+                            <li id="item">C++</li>
+                            <li id="item">C</li>
+                            <li id="item">Rust</li>
+                            <li id="item">Java</li>
+                            <li id="item">MySQL</li>
+                            <li id="item">Bash</li>
+                            <li id="item">Git</li>
+                            <li id="item">TCP/ UDP</li>
+                            <li id="item">Linux/ Unix</li>
+                        </ul>
+                    </div>
+
+                    <div className="list-content">
+                        <h3 className="list-title">
+                            <u>Interests</u>
+                        </h3>
+                        
+                        <ul id="list-items">
+                            <li id="item">3D Printing</li>
+                            <li id="item">Painting</li>
+                            <li id="item">Origami</li>
+                            <li id="item">The Legend of Zelda</li>
+                            <li id="item">Software Engineering</li>
+                            <li id="item">Biking</li>
+                            <li id="item">Roller Blading</li>
+                            <li id="item">EDM</li>
+                            <li id="item">Anime</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="publications-content">
+                    <h2 id="publications-title">{arrow} Publications</h2>
+
+                    <div className="publications-spoiler">
+                        <Publications visible={visible}/>
+
+                        <div className="publication-toggle">
+                            <input className="button" type="button" value={buttonName} onClick={onSpoilerClick} href="#scroll"/>
+                        </div>
+                    </div>
                 </div>
 
     {/*}TODO: Change this to pull from a file
@@ -77,6 +107,21 @@ const About = () => {
     */}
             </div>
         </React.Fragment>
+    )
+};
+
+const Publications = ({ visible }) => {
+    if (!visible) {
+        return null;
+    }
+
+    return (
+       <ul id="publications-list">
+            <li id="publications-item">
+                Ziegler, R., & Addo-Quaye, C. (2023). Analysis of Natural Variation in 30 Sorghum Landraces. <br/>
+                <a href="https://scholarworks.boisestate.edu/icur/2023/poster_session/86/">https://scholarworks.boisestate.edu/icur/2023/poster_session/86/</a> 
+            </li>
+        </ul>
     )
 };
 
