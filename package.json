@@ -29,7 +29,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://isoptera.lcsc.edu/~rjziegler/",
+  "homepage": ".",
   "browserslist": {
     "production": [
       ">0.2%",

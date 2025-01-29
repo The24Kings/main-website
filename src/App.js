@@ -13,14 +13,10 @@ function App() {
         <Navigation/>
 
         <Routes>
-          <Route index element={<Home />} />
-
-          <Route path="~rjziegler/">
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
   );
