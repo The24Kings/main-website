@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 const About = () => {
     const [ visible, setVisible ] = useState(false);
     const [buttonName, setButtonName] = useState("Spoiler!");
     const [arrow, setArrow] = useState("⮞");
+
+    useEffect(() => {
+        document.title = "About - Riley Ziegler";
+    }, []);
 
     const onSpoilerClick = () => {
         setVisible(!visible);

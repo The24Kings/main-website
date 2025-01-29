@@ -1,4 +1,10 @@
+import React, { useEffect } from 'react';
+
 const Contact = () => {
+    useEffect(() => {
+        document.title = "Contact - Riley Ziegler";
+    }, []);
+
     return (
         <div className="container">
             <h1 id="contact-header">Contact Me!</h1>
