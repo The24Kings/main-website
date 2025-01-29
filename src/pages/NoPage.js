@@ -1,8 +1,8 @@
 const NoPage = () => {
     return (
-        <div>
+        <div className="container">
             <h1 className="error">404</h1>
-            <p1>Sorry this page does not exist!</p1>
+            <p>Sorry this page does not exist!</p>
         </div>
     );
 };

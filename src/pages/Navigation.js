@@ -9,7 +9,7 @@ const Navigation = () => {
     <React.Fragment>
       <div className="nav-container">
         <div className="pfp">
-          <img id="image" src={require("../content/Logo.jpg")} onClick={() => window.open("https://github.com/The24Kings")} alt="Profile Picture"/>
+          <img id="image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Logo.jpg" onClick={() => window.open("https://github.com/The24Kings")} alt="Profile Picture"/>
         </div>
 
         <div id="info">
@@ -19,9 +19,9 @@ const Navigation = () => {
 
         <div id="nav">
           <ul id="nav-list">
-            <li id="nav-item"><Link to="/" className={location.pathname === "/" ? "active" : null}>Home</Link></li>
-            <li id="nav-item"><Link to="/about" className={location.pathname === "/about" ? "active" : null}>About</Link> </li>
-            <li id="nav-item"><Link to="/contact" className={location.pathname === "/contact" ? "active" : null}>Contact</Link></li>
+            <li id="nav-item"><Link to="~rjziegler/" className={location.pathname === "~rjziegler/" ? "active" : null}>Home</Link></li>
+            <li id="nav-item"><Link to="~rjziegler/about" className={location.pathname === "~rjziegler/about" ? "active" : null}>About</Link> </li>
+            <li id="nav-item"><Link to="~rjziegler/contact" className={location.pathname === "~rjziegler/contact" ? "active" : null}>Contact</Link></li>
           </ul>
         </div>
       </div>
