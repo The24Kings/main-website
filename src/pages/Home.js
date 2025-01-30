@@ -1,8 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import MarkdownContent from "react-markdown";
 
 import Spoiler from "../utilities/Spoiler";
 
 const Home = () => {
+    const [projectContent, setProjectContent] = useState("");
+
+    // Fetch the blog post from the server
+    useEffect(() => {
+        fetch("https://isoptera.lcsc.edu/~rjziegler/content/projects.md", { mode: "cors" })
+        .then(response => response.text())
+        .then(data => { setProjectContent(data); })
+        .catch(e => { setProjectContent("Error fetching blog post..."); });
+    }, [projectContent]);
+
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
     }, []);
@@ -16,6 +27,27 @@ const Home = () => {
                     <h2 id="about-header">⮟ Information</h2>
                     <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
                 </div>
+
+                <br/>
+
+                <Spoiler title="Publications" visible={true} noToggle={true}>
+                    <ul id="publications-list">
+                        <li id="publications-item">
+                            Ziegler, R., & Addo-Quaye, C. (2023). Analysis of Natural Variation in 30 Sorghum Landraces. <br/>
+                            <a href="https://scholarworks.boisestate.edu/icur/2023/poster_session/86/">https://scholarworks.boisestate.edu/icur/2023/poster_session/86/</a> 
+                        </li>
+                    </ul>
+                </Spoiler>
+
+                <br/>
+
+                <div id="blog-content">
+                    <Spoiler title="Projects" visible={true} noToggle={true}>
+                        <MarkdownContent>{projectContent}</MarkdownContent>
+                    </Spoiler>
+                </div>
+
+                <br/>
 
                 <Spoiler title=" Here are some pictures of my cat Bandit">
                     <div className="gallery">
