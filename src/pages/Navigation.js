@@ -21,7 +21,7 @@ const Navigation = () => {
           <ul id="nav-list">
             <li id="nav-item"><Link to="/" className={location.pathname === "/" ? "active" : null}>Home</Link></li>
             <li id="nav-item"><Link to="/about" className={location.pathname === "/about" ? "active" : null}>About</Link> </li>
-            <li id="nav-item"><Link to="/blog" className={location.pathname === "/blog" ? "active" : null}>Blog</Link></li>
+            <li id="nav-item"><Link to="/projects" className={location.pathname === "/blog" ? "active" : null}>Projects</Link></li>
             <li id="nav-item"><Link to="/contact" className={location.pathname === "/contact" ? "active" : null}>Contact</Link></li>
           </ul>
         </div>

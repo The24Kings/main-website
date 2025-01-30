@@ -3,7 +3,7 @@ import MarkdownContent from "react-markdown";
 
 import Spoiler from "../utilities/Spoiler";
 
-const Blog = () => {
+const Projects = () => {
     const [projectContent, setProjectContent] = useState("");
     const [statusContent, setStatusContent] = useState("");
 
@@ -45,4 +45,4 @@ const Blog = () => {
     )
 };
 
-export default Blog;
+export default Projects;
