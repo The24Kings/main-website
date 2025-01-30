@@ -3,8 +3,6 @@ import MarkdownContent from "react-markdown";
 
 import Spoiler from "../utils";
 
-{/* TODO: Import file from remote server of blog post and display it here */}
-
 const Blog = () => {
     const [projectContent, setProjectContent] = useState("");
     const [statusContent, setStatusContent] = useState("");

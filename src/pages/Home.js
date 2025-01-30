@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import Spoiler from "../utils";
 
 const Home = () => {
-    const [ visible, setVisible ] = useState(false);
-    const [buttonName, setButtonName] = useState("Spoiler!");
-    const [arrow, setArrow] = useState("⮞");
-
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
     }, []);
-
-    const onSpoilerClick = () => {
-        setVisible(!visible);
-
-        if (visible) {
-            setButtonName("Spoiler!");
-            setArrow("⮞");
-        } else {
-            setButtonName("Hide");
-            setArrow("⮟");
-        }
-    }
 
     return (
         <React.Fragment>

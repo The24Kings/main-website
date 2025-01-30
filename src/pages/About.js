@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import Spoiler from "../utils";
 
@@ -11,8 +11,6 @@ const About = () => {
         <React.Fragment>
             <div className="container">
                 <h1 id="about-header">About me!</h1>
-
-                {/*TODO: Add a professional picture with a link to my resume */}
 
                 <div className="about">
                     <h2 id="about-title">⮟ What do I do?</h2>
