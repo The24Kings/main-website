@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route, HashRouter } from "react-router";
 
 import Navigation from "./pages/Navigation";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-      <BrowserRouter>
+      <HashRouter>
         <Navigation/>
 
         <Routes>
@@ -20,7 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/*" element={<NoPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
   );
 }
 
