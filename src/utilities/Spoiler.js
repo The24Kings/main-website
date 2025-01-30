@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Spoiler extends Component {
     constructor(props) {
         super(props);
-        this.state = { visible: false };
+        this.state = { visible: props.visible };
     }
 
     render() {
