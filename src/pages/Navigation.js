@@ -9,12 +9,12 @@ const Navigation = () => {
     <React.Fragment>
       <div className="nav-container">
         <div className="pfp">
-          <img id="image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Logo.jpg" onClick={() => window.open("https://github.com/The24Kings")} alt="Profile Picture"/>
+          <img id="image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Logo.jpg" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Profile Picture"/>
         </div>
 
         <div id="info">
           <h1>Riley Ziegler</h1>
-          <h5><a onClick={() => window.open("https://github.com/The24Kings")}>SOFTWARE DEVELOPER</a></h5>
+          <h5 title="Github"><a onClick={() => window.open("https://github.com/The24Kings")}>SOFTWARE DEVELOPER</a></h5>
         </div>
 
         <div id="nav">
