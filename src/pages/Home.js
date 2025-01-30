@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import Spoiler from "../utils";
+import Spoiler from "../utilities/Spoiler";
 
 const Home = () => {
     useEffect(() => {

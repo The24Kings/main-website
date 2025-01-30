@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MarkdownContent from "react-markdown";
 
-import Spoiler from "../utils";
+import Spoiler from "../utilities/Spoiler";
 
 const Blog = () => {
     const [projectContent, setProjectContent] = useState("");
