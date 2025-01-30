@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Spoiler extends Component {
     constructor(props) {
         super(props);
-        this.state = { visible: props.visible };
+        this.state = { visible: props.visible, noToggle: props.noToggle };
     }
 
     render() {
@@ -16,10 +16,13 @@ class Spoiler extends Component {
                         {this.props.children}
                     </div>
                 }
+
+                {!this.state.noToggle &&
+                    <div className="toggle">
+                        <input className="button" type="button" value={this.state.visible ? "Hide" : "Spoiler!"} onClick={() => this.setState({ visible: !this.state.visible })}/>
+                    </div>
+                }
             
-                <div className="toggle">
-                    <input className="button" type="button" value={this.state.visible ? "Hide" : "Spoiler!"} onClick={() => this.setState({ visible: !this.state.visible })}/>
-                </div>
             </React.Fragment>
         );
     }
