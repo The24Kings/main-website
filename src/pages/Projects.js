@@ -23,7 +23,7 @@ const Projects = () => {
     }, [statusContent]);
 
     useEffect(() => {
-        document.title = "Blog - Riley Ziegler";
+        document.title = "Projects - Riley Ziegler";
     }, []);
 
     return (
