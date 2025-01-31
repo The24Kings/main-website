@@ -25,6 +25,10 @@ const Navigation = () => {
             <li id="nav-item"><Link to="/contact" className={location.pathname === "/contact" ? "active" : null}>Contact</Link></li>
           </ul>
         </div>
+
+        <div id="social">
+          <img id="social-image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Github.png" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Github"/>
+        </div>
       </div>
     </React.Fragment>
   )
