@@ -90,8 +90,6 @@ const Home = () => {
                     <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
                 </div>
 
-                <br/>
-
                 <Spoiler title="Publications" visible={true} noToggle={true}>
                     <table id="publications-list">
                         <tbody>
@@ -108,17 +106,13 @@ const Home = () => {
                     </table>
                 </Spoiler>
 
-                <br/>
-
                 <div id="blog-content">
                     <Spoiler title="Projects" visible={true} noToggle={true}>
                         <MarkdownContent>{projectContent}</MarkdownContent>
                     </Spoiler>
                 </div>
 
-                <br/>
-
-                <Spoiler title=" Here are some pictures of my cat Bandit">
+                <Spoiler title="You found me!">
                     <div className="gallery">
                         <div className="picture-content">
                             <img id="cat" src="https://isoptera.lcsc.edu/~rjziegler/pictures/cat/shelf.JPG" alt="Cat on a shelf"/>

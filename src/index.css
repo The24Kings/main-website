@@ -19,7 +19,6 @@ body {
   color: #eaeaea;
   padding: 1%;
   /* Top -> Left (Clockwise)*/
-  margin: 1% 0 0 0;
   border: none;
   border-radius: 0.5vw;
   font-size: 1.5vw;
@@ -189,6 +188,10 @@ body {
   width: 30%;
   height: auto;
   padding: 1%;
+}
+
+.gallery {
+  margin: 1% 0 1% 0;
 }
 
 /* Links */
