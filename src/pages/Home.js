@@ -106,7 +106,7 @@ const Home = () => {
                     </table>
                 </Spoiler>
 
-                <div id="blog-content">
+                <div id="md-content">
                     <Spoiler title="Projects" visible={true} noToggle={true}>
                         <MarkdownContent>{projectContent}</MarkdownContent>
                     </Spoiler>

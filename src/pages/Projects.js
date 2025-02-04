@@ -29,9 +29,9 @@ const Projects = () => {
     return (
         <React.Fragment>
             <div className="container">
-                <h1 id="blog-header">What am I up to?!</h1>
+                <h1 id="projects-header">What am I up to?!</h1>
 
-                <div id="blog-content">
+                <div id="md-content">
                     <Spoiler title="Projects">
                         <MarkdownContent>{projectContent}</MarkdownContent>
                     </Spoiler>
