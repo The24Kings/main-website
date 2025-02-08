@@ -99,11 +99,12 @@ img {
 
 .nav-container #social {
   position: fixed;
+  width: 20%;
   bottom: 0;
 }
 
 .nav-container #social img {
-  width: 10%;
+  width: 12%;
   padding: 1%;
   cursor: pointer;
   border-radius: 10%;
