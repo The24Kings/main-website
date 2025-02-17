@@ -28,6 +28,7 @@ const Navigation = () => {
 
         <div id="social">
           <img id="social-image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Github.png" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Github"/>
+          <img id="social-image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/linkedin.png" onClick={() => window.open("https://linkedin.com/in/riley-ziegler/")} title="linkedin" alt="linkedin"/>
         </div>
       </div>
     </React.Fragment>

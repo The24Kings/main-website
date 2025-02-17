@@ -31,15 +31,17 @@ const Projects = () => {
             <div className="container">
                 <h1 id="projects-header">What am I up to?!</h1>
 
-                <div id="md-content">
                     <Spoiler title="Projects">
-                        <MarkdownContent>{projectContent}</MarkdownContent>
+                        <div id="md-content">
+                            <MarkdownContent>{projectContent}</MarkdownContent>
+                        </div>
                     </Spoiler>
 
                     <Spoiler title="Status Updates">
-                        <MarkdownContent>{statusContent}</MarkdownContent>
+                        <div id="md-content">
+                            <MarkdownContent>{statusContent}</MarkdownContent>
+                        </div>
                     </Spoiler>
-                </div>
             </div>
         </React.Fragment>
     )

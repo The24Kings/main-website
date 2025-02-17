@@ -145,7 +145,7 @@ img {
 
 /* Markdown */
 
-#md-content #content {
+#md-content {
   background-color: var(--background-secondary);
   margin: 1% 0 1% 0;
   padding: 1%;

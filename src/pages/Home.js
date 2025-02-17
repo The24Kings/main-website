@@ -5,8 +5,9 @@ import Spoiler from "../utilities/Spoiler";
 
 const Home = () => {
     const [projectContent, setProjectContent] = useState("");
-    const [showSkills, setShowSkills] = React.useState(false);
-    const [showInterests, setShowInterests] = React.useState(false);
+    const [showSkills, setShowSkills] = useState(false);
+    const [showInterests, setShowInterests] = useState(false);
+    const [showCourses, setShowCourses] = useState(false);
 
     // Fetch the blog post from the server
     useEffect(() => {
@@ -87,6 +88,37 @@ const Home = () => {
                             </table>
                         )}
                     </div>
+
+                    <div className="list-content">
+                        <h2 className="list-title">
+                            <u><a onClick={() => setShowCourses(!showCourses)}>Relavant Courses</a></u>
+                        </h2>
+                        {showCourses && (
+                            <table id="list-items">
+                                <tbody>
+                                    <tr>
+                                        <td id="item">Data Structures and Algorithms</td>
+                                        <td id="item">Computer Architecture</td>
+                                        <td id="item">Operating Systems</td>
+                                        <td id="item">Capstone Design</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="item">Intelligent Systems/ AI</td>
+                                        <td id="item">Computer Networks</td>
+                                        <td id="item">Database Systems</td>
+                                        <td id="item">Software Engineering</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="item">Game Engine Design</td>
+                                        <td id="item">Computer Security</td>
+                                        <td id="item">Discrete Mathematics</td>
+                                        <td id="item">Calculus I</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        )}
+                    </div>
+
                     <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
                 </div>
 
@@ -106,11 +138,11 @@ const Home = () => {
                     </table>
                 </Spoiler>
 
-                <div id="md-content">
-                    <Spoiler title="Projects" visible={true} noToggle={true}>
+                <Spoiler title="Projects" visible={true} noToggle={true}>
+                    <div id="md-content">
                         <MarkdownContent>{projectContent}</MarkdownContent>
-                    </Spoiler>
-                </div>
+                    </div>
+                </Spoiler>
 
                 <Spoiler title="You found me!">
                     <div className="gallery">
