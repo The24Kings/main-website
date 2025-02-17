@@ -91,7 +91,7 @@ const Home = () => {
 
                     <div className="list-content">
                         <h2 className="list-title">
-                            <u><a onClick={() => setShowCourses(!showCourses)}>Relavant Courses</a></u>
+                            <u><a onClick={() => setShowCourses(!showCourses)}>Relevant Courses</a></u>
                         </h2>
                         {showCourses && (
                             <table id="list-items">
@@ -115,10 +115,10 @@ const Home = () => {
                                         <td id="item">Calculus I</td>
                                     </tr>
                                     <tr>
-                                        <td id="item">Networking 1 & 2</td>
-                                        <td id="item">Cybersecurity 1 & 2</td>
-                                        <td id="item"></td>
-                                        <td id="item"></td>
+                                        <td id="item">Networking I</td>
+                                        <td id="item">Cybersecurity I</td>
+                                        <td id="item">Networking II</td>
+                                        <td id="item">Cybersecurity II</td>
                                     </tr>
                                 </tbody>
                             </table>
