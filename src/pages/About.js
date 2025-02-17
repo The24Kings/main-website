@@ -104,21 +104,27 @@ const About = () => {
                                 <tbody>
                                     <tr>
                                         <td id="item">Data Structures and Algorithms</td>
+                                        <td id="item">Capstone Design</td>
                                         <td id="item">Computer Architecture</td>
                                         <td id="item">Operating Systems</td>
-                                        <td id="item">Capstone Design</td>
                                     </tr>
                                     <tr>
                                         <td id="item">Intelligent Systems/ AI</td>
-                                        <td id="item">Computer Networks</td>
                                         <td id="item">Database Systems</td>
                                         <td id="item">Software Engineering</td>
+                                        <td id="item">Computer Networks</td>
                                     </tr>
                                     <tr>
-                                        <td id="item">Game Engine Design</td>
                                         <td id="item">Computer Security</td>
+                                        <td id="item">Game Engine Design</td>
                                         <td id="item">Discrete Mathematics</td>
                                         <td id="item">Calculus I</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="item">Networking 1 & 2</td>
+                                        <td id="item">Cybersecurity 1 & 2</td>
+                                        <td id="item"></td>
+                                        <td id="item"></td>
                                     </tr>
                                 </tbody>
                             </table>
