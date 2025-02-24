@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import MarkdownContent from "react-markdown";
 
 import Spoiler from "../utilities/Spoiler";
+import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
+import Section from "../utilities/Section";
 
 const Home = () => {
     const [projectContent, setProjectContent] = useState("");
-    const [showSkills, setShowSkills] = useState(false);
-    const [showInterests, setShowInterests] = useState(false);
-    const [showCourses, setShowCourses] = useState(false);
 
     // Fetch the blog post from the server
     useEffect(() => {
@@ -26,109 +25,15 @@ const Home = () => {
             <div className="container">
                 <h1 id="home-header">Welcome!</h1>
 
-                <div className="about">
-                    <h2 id="about-header">⮟ Information</h2>
-
-                    <div className="list-content">
-                        <h2 className="list-title">
-                            <u><a onClick={() => setShowSkills(!showSkills)}>Skills</a></u>
-                        </h2>
-                        {showSkills && (
-                            <table id="list-items">
-                                <tbody>
-                                    <tr>
-                                        <td id="item">Python</td>
-                                        <td id="item">C++</td>
-                                        <td id="item">C</td>
-                                        <td id="item">Rust</td>
-                                        <td id="item">Java</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">MySQL</td>
-                                        <td id="item">Bash</td>
-                                        <td id="item">Git</td>
-                                        <td id="item">TCP/ UDP</td>
-                                        <td id="item">Linux/ Unix</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">HTML</td>
-                                        <td id="item">CSS</td>
-                                        <td id="item">JavaScript</td>
-                                        <td id="item">React</td>
-                                        <td id="item">Node.js</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        )}
-                    </div>
-
-                    <div className="list-content">
-                        <h2 className="list-title">
-                            <u><a onClick={() => setShowInterests(!showInterests)}>Interests</a></u>
-                        </h2>
-                        {showInterests && (
-                            <table id="list-items">
-                                <tbody>
-                                    <tr>
-                                        <td id="item">3D Printing</td>
-                                        <td id="item">The Legend of Zelda</td>
-                                        <td id="item">Roller Blading</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">Painting</td>
-                                        <td id="item">Software Engineering</td>
-                                        <td id="item">EDM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">Origami</td>
-                                        <td id="item">Biking</td>
-                                        <td id="item">Anime</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        )}
-                    </div>
-
-                    <div className="list-content">
-                        <h2 className="list-title">
-                            <u><a onClick={() => setShowCourses(!showCourses)}>Relevant Courses</a></u>
-                        </h2>
-                        {showCourses && (
-                            <table id="list-items">
-                                <tbody>
-                                <tr>
-                                        <td id="item">Data Structures and Algorithms</td>
-                                        <td id="item">Capstone Design</td>
-                                        <td id="item">Computer Architecture</td>
-                                        <td id="item">Operating Systems</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">Intelligent Systems/ AI</td>
-                                        <td id="item">Database Systems</td>
-                                        <td id="item">Software Engineering</td>
-                                        <td id="item">Computer Networks</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">Computer Security</td>
-                                        <td id="item">Game Engine Design</td>
-                                        <td id="item">Discrete Mathematics</td>
-                                        <td id="item">Calculus I</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="item">Networking I</td>
-                                        <td id="item">Cybersecurity I</td>
-                                        <td id="item">Networking II</td>
-                                        <td id="item">Cybersecurity II</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        )}
-                    </div>
+                <Section className="about" title="Information">
+                    <SkillsTable/>
+                    <InterestsTable/>
+                    <CoursesTable/>
 
                     <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
-                </div>
+                </Section>
 
-                <Spoiler title="Publications" visible={true} noToggle={true}>
+                <Section title="Publications">
                     <table id="publications-list">
                         <tbody>
                             <tr id="publications-item">
@@ -142,13 +47,13 @@ const Home = () => {
                             </tr>
                         </tbody>
                     </table>
-                </Spoiler>
+                </Section>
 
-                <Spoiler title="Projects" visible={true} noToggle={true}>
+                <Section title="Projects">
                     <div id="md-content">
                         <MarkdownContent>{projectContent}</MarkdownContent>
                     </div>
-                </Spoiler>
+                </Section>
 
                 <Spoiler title="You found me!">
                     <div className="gallery">
