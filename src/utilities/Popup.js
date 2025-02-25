@@ -1,10 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 class Popup extends Component {
-    constructor(props) {
-        super(props);
-    }   
-
     render() {
         return (
             <React.Fragment>
@@ -16,7 +12,6 @@ class Popup extends Component {
                     <div className="popup">
                         <div className="popup-header">
                             <h2 className="popup-title">{this.props.title}</h2>
-                            <button className="close-popup" onClick={this.props.onClose}>X</button>
                         </div>
                         <div className="popup-content">
                             {this.props.children}
