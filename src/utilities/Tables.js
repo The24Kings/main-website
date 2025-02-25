@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Popup from './Popup';
 
 const SkillsTable = () => {
     const [showSkills, setShowSkills] = useState(false);
@@ -74,17 +75,45 @@ const InterestsTable = () => {
 
 const CoursesTable = () => {
     const [showCourses, setShowCourses] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+
+    const [popupTitle, setPopupTitle] = useState("");
+    const [popupContent, setPopupContent] = useState("");
+
+    const displayPopup = (title, content) => {
+        setPopupTitle(title);
+        setPopupContent(content);
+        setShowPopup(true);
+    }
+
+    const closePopup = () => {
+        setPopupTitle("");
+        setPopupContent("");
+        setShowPopup(false);
+    }
 
     return (
         <section className="list-content">
             <h2 className="list-title">
-                {showCourses ? "⮟" : "⮞"} <u onClick={() => setShowCourses(!showCourses)}>Relevant Courses</u>
+                {showCourses ? "⮟" : "⮞"} <u onClick={() => {setShowCourses(!showCourses)}}>Relevant Courses</u>
             </h2>
             {showCourses && (
                 <table id="list-items">
                     <tbody>
-                    <tr>
-                            <td id="item">Data Structures and Algorithms</td>
+                        <tr>
+                            <td 
+                                id="item" 
+                                onClick={() => { 
+                                   displayPopup(
+                                        "Data Structures and Algorithms", 
+                                        "This course covers the design and implementation of data structures and algorithms.\
+                                         Topics include: arrays, linked lists, stacks, queues, trees, graphs, sorting, searching, \
+                                         and algorithm analysis."
+                                    );
+                                }}
+                            >
+                                <u>Data Structures and Algorithms</u>
+                            </td>
                             <td id="item">Capstone Design</td>
                             <td id="item">Computer Architecture</td>
                             <td id="item">Operating Systems</td>
@@ -110,6 +139,10 @@ const CoursesTable = () => {
                     </tbody>
                 </table>
             )}
+
+            <Popup title={popupTitle} visible={showPopup} onClose={() => closePopup()}>
+                {popupContent}
+            </Popup>
         </section>
     )
 }
