@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import MarkdownContent from "react-markdown";
 
 import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
 import Section from "../utilities/Section";
+import { useProjectContent } from "../utilities/Fetch";
 
 const Home = () => {
-    const [projectContent, setProjectContent] = useState("");
-
-    // Fetch the blog post from the server
-    useEffect(() => {
-        fetch("https://isoptera.lcsc.edu/~rjziegler/content/projects.md", { mode: "cors" })
-        .then(response => response.text())
-        .then(data => { setProjectContent(data); })
-        .catch(e => { setProjectContent("Error fetching blog post..."); });
-    }, [projectContent]);
+    const { projectContent } = useProjectContent();
 
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
