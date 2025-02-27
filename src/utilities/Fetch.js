@@ -19,7 +19,7 @@ export const useProjectContent = () => {
             });
 
         setLoading(false);
-    }, [projectContent, projectLoading, error]);
+    }, []);
 
     return { projectContent, projectLoading, error };
 };
@@ -43,7 +43,7 @@ export const useStatusContent = () => {
             });
 
         setLoading(false);
-    }, [statusContent, statusLoading, error]);
+    }, []);
 
     return { statusContent, statusLoading, error };
 };
