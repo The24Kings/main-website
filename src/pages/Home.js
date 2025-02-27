@@ -7,7 +7,7 @@ import Section from "../utilities/Section";
 import { useProjectContent } from "../utilities/Fetch";
 
 const Home = () => {
-    const { projectContent } = useProjectContent();
+    const { projectContent, projectLoading } = useProjectContent();
 
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
@@ -43,9 +43,12 @@ const Home = () => {
                 </Section>
 
                 <Section title="Projects">
-                    <div id="md-content">
-                        <MarkdownContent>{projectContent}</MarkdownContent>
-                    </div>
+                    {projectLoading && <div>Loading...</div>}
+                    {!projectLoading && (
+                        <div id="md-content">
+                            <MarkdownContent>{projectContent}</MarkdownContent>
+                        </div>
+                    )}
                 </Section>
 
                 <Spoiler title="You found me!">
