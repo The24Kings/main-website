@@ -5,8 +5,7 @@ const transition = {
     animate: {
         opacity: 1,
         transition: {
-            duration: 0.8,
-            ease: [0.87, 0, 0.13, 1],
+            duration: 0.8
         }
     },
     exit: {
