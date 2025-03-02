@@ -6,7 +6,7 @@ import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
 import Section from "../utilities/Section";
 import { useProjectContent } from "../utilities/Fetch";
-import transition from "../utilities/Animation";
+import transition, { customButtonClick } from "../utilities/Animation";
 
 const Home = () => {
     const { projectContent, projectLoading } = useProjectContent();
@@ -31,7 +31,7 @@ const Home = () => {
                     <SkillsTable/>
                     <InterestsTable/>
 
-                    <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
+                    <motion.input variants={customButtonClick} whileTap="click" className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
                 </Section>
 
                 <Section title="Publications">

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { motion } from "framer-motion";
+
+import { customButtonClick } from "../utilities/Animation";
 
 class Spoiler extends Component {
     constructor(props) {
@@ -21,7 +24,7 @@ class Spoiler extends Component {
 
                     {!this.state.noToggle && (
                         <div className="toggle">
-                            <input className="button" type="button" value={this.state.visible ? "Hide" : "Spoiler!"} onClick={() => this.setState({ visible: !this.state.visible })}/>
+                            <motion.input variants={customButtonClick} whileTap="click" className="button" type="button" value={this.state.visible ? "Hide" : "Spoiler!"} onClick={() => this.setState({ visible: !this.state.visible })}/>
                         </div>
                     )}
                 </section>
