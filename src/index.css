@@ -38,38 +38,6 @@ img {
     filter: drop-shadow(0.3em 0.3em 0.3em var(--shadow));
 }
 
-#github-link:hover {
-    background: linear-gradient(
-        90deg, 
-        #ff0000, 
-        #ff7f00, 
-        #ffff00, 
-        #00ff00, 
-        #0000ff, 
-        #4b0082, 
-        #8f00ff, 
-        #ff0000,
-        #ff7f00,
-        #ffff00
-    );
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400% 100%;
-    animation: rainbow_animation 6s ease-in-out infinite;
-}
-
-@keyframes rainbow_animation {
-    0% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: 100% 0;
-    }
-}
-
 /* Navigation Bar */
 
 .nav-container {
