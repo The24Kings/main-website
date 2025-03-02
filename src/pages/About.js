@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 
 import { CoursesTable, InterestsTable, SkillsTable } from "../utilities/Tables";
 import Section from "../utilities/Section";
+import transition from "../utilities/Animation";
 
 const About = () => {
     useEffect(() => {
@@ -11,7 +12,13 @@ const About = () => {
 
     return (
         <React.Fragment>
-            <motion.div className="container" exit={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} initial={{ opacity: 0 }}>
+            <motion.div 
+                className="container" 
+                variants={transition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <h1 id="about-header">About me!</h1>
 
                 <Section title="Information">

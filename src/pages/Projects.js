@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 
 import { useProjectContent, useStatusContent } from "../utilities/Fetch";
 import Spoiler from "../utilities/Spoiler";
+import transition from "../utilities/Animation";
 
 const Projects = () => {
     const { projectContent, projectLoading } = useProjectContent();
@@ -15,7 +16,13 @@ const Projects = () => {
 
     return (
         <React.Fragment>
-            <motion.div className="container" exit={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} initial={{ opacity: 0 }}>
+            <motion.div 
+                className="container" 
+                variants={transition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <h1 id="projects-header">What am I up to?!</h1>
 
                 <Spoiler title="Projects">

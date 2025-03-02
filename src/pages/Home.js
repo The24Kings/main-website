@@ -6,6 +6,7 @@ import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
 import Section from "../utilities/Section";
 import { useProjectContent } from "../utilities/Fetch";
+import transition from "../utilities/Animation";
 
 const Home = () => {
     const { projectContent, projectLoading } = useProjectContent();
@@ -16,7 +17,13 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <motion.div className="container" exit={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} initial={{ opacity: 0 }}>
+            <motion.div 
+                className="container" 
+                variants={transition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <h1 id="home-header">Welcome!</h1>
 
                 <Section className="about" title="Information">
