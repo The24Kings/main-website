@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import MarkdownContent from "react-markdown";
+import { motion } from "framer-motion"
 
 import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
@@ -15,13 +16,13 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <div className="container">
+            <motion.div className="container" exit={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} initial={{ opacity: 0 }}>
                 <h1 id="home-header">Welcome!</h1>
 
                 <Section className="about" title="Information">
+                    <CoursesTable/>
                     <SkillsTable/>
                     <InterestsTable/>
-                    <CoursesTable/>
 
                     <input className="button" type="button" value="Résumé" onClick={() => window.open("https://isoptera.lcsc.edu/~rjziegler/pictures/Resume.pdf")}/>
                 </Section>
@@ -43,12 +44,9 @@ const Home = () => {
                 </Section>
 
                 <Section title="Projects">
-                    {projectLoading && <div>Loading...</div>}
-                    {!projectLoading && (
-                        <div id="md-content">
-                            <MarkdownContent>{projectContent}</MarkdownContent>
-                        </div>
-                    )}
+                    <div id="md-content">
+                        {!projectLoading ? (<MarkdownContent>{projectContent}</MarkdownContent>) : (<div><h1>Loading...</h1></div>)}
+                    </div>
                 </Section>
 
                 <Spoiler title="You found me!">
@@ -72,7 +70,7 @@ const Home = () => {
                         <div id="scroll"></div>
                     </div> 
                 </Spoiler>
-            </div>  
+            </motion.div>  
         </React.Fragment>  
     )
 };

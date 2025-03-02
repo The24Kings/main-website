@@ -8,6 +8,7 @@
     "@mui/material": "^6.4.1",
     "@react-pdf/renderer": "^4.1.6",
     "@wojtekmaj/react-hooks": "^1.22.0",
+    "framer-motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-frame-component": "^5.2.7",

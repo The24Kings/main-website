@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion"
 
 import { CoursesTable, InterestsTable, SkillsTable } from "../utilities/Tables";
 import Section from "../utilities/Section";
@@ -10,12 +11,11 @@ const About = () => {
 
     return (
         <React.Fragment>
-            <div className="container">
+            <motion.div className="container" exit={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} initial={{ opacity: 0 }}>
                 <h1 id="about-header">About me!</h1>
 
-                <CoursesTable/>
-
                 <Section title="Information">
+                    <CoursesTable/>
                     <SkillsTable/>
                     <InterestsTable/>
                 </Section>
@@ -35,7 +35,7 @@ const About = () => {
                         </tbody>
                     </table>
                 </Section>
-            </div>
+            </motion.div>
         </React.Fragment>
     )
 };
