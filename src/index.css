@@ -38,6 +38,10 @@ img {
     filter: drop-shadow(0.3em 0.3em 0.3em var(--shadow));
 }
 
+li {
+    list-style-type: none;
+}
+
 /* Navigation Bar */
 
 .nav-container {

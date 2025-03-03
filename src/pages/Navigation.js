@@ -10,7 +10,7 @@ const Navigation = () => {
 
     return (
         <React.Fragment>
-            <div className="nav-container">
+            <header className="nav-container">
                 <div className="pfp">
                     <img id="image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Logo.jpg" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Logo"/>
                 </div>
@@ -49,7 +49,7 @@ const Navigation = () => {
                     <motion.img variants={clickAnim} whileTap="click" id="social-image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Github.png" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Link to Github"/>
                     <motion.img variants={clickAnim} whileTap="click" id="social-image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/linkedin.png" onClick={() => window.open("https://linkedin.com/in/riley-ziegler/")} title="linkedin" alt="Link to Linkedin"/>
                 </footer>
-            </div>
+            </header>
         </React.Fragment>
     );
 };
