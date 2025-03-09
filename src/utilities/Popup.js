@@ -12,6 +12,7 @@ class Popup extends Component {
             {this.props.visible && (
                 <motion.div className="popup" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                     <div className="popup-header">
+                        {/*TODO: If there is an image, have it appear in the header */}
                         <h2 className="popup-title">{this.props.title}</h2>
                     </div>
                     <div className="popup-content">
