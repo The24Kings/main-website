@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import MarkdownContent from "react-markdown";
 import { motion } from "framer-motion"
+import { Converter } from "showdown";
 
 import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
@@ -10,6 +10,16 @@ import transition, { customButtonClick } from "../utilities/Animation";
 
 const Home = () => {
     const { projectContent, projectLoading } = useProjectContent();
+
+    const converter = new Converter();
+
+    // Settings
+    converter.setFlavor("github");
+    converter.setOption("openLinksInNewWindow", true);
+    converter.setOption("moreStyling", true);
+    converter.setOption("customizedHeaderId", true);
+
+    const html = converter.makeHtml(projectContent);
 
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
@@ -47,9 +57,7 @@ const Home = () => {
                 </Section>
 
                 <Section title="Projects">
-                    <div id="md-content">
-                        {!projectLoading ? (<MarkdownContent>{projectContent}</MarkdownContent>) : (<div><h1>Loading...</h1></div>)}
-                    </div>
+                    {!projectLoading ? (<div id="md-content" dangerouslySetInnerHTML={{ __html: html }} />) : (<div><h1>Loading...</h1></div>)}
                 </Section>
 
                 <Spoiler title="You found me!">
