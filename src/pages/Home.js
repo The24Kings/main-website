@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import MarkdownContent from "react-markdown";
 import { motion } from "framer-motion"
+import { Converter } from "showdown";
 
 import Spoiler from "../utilities/Spoiler";
 import { SkillsTable, InterestsTable, CoursesTable } from "../utilities/Tables";
@@ -11,14 +11,24 @@ import transition, { customButtonClick } from "../utilities/Animation";
 const Home = () => {
     const { projectContent, projectLoading } = useProjectContent();
 
+    const converter = new Converter();
+
+    // Settings
+    converter.setFlavor("github");
+    converter.setOption("openLinksInNewWindow", true);
+    converter.setOption("moreStyling", true);
+    converter.setOption("customizedHeaderId", true);
+
+    const html = converter.makeHtml(projectContent);
+
     useEffect(() => {
         document.title = "Home - Riley Ziegler";
     }, []);
 
     return (
         <React.Fragment>
-            <motion.div 
-                className="container" 
+            <motion.main
+                className="container"
                 variants={transition}
                 initial="initial"
                 animate="animate"
@@ -35,25 +45,19 @@ const Home = () => {
                 </Section>
 
                 <Section title="Publications">
-                    <table id="publications-list">
-                        <tbody>
-                            <tr id="publications-item">
-                                <td>
-                                    Ziegler, R., & Addo-Quaye, C. (2023). Analysis of Natural Variation in 30 Sorghum Landraces. <br/>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="https://scholarworks.boisestate.edu/icur/2023/poster_session/86/">
-                                        https://scholarworks.boisestate.edu/icur/2023/poster_session/86/
-                                    </a> 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <ul id="publications-list">
+                        <li id="publications-item">
+                            Ziegler, R., & Addo-Quaye, C. (2023). Analysis of Natural Variation in 30 Sorghum Landraces. <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://scholarworks.boisestate.edu/icur/2023/poster_session/86/">
+                                https://scholarworks.boisestate.edu/icur/2023/poster_session/86/
+                            </a> 
+                        </li>
+                    </ul>
                 </Section>
 
                 <Section title="Projects">
-                    <div id="md-content">
-                        {!projectLoading ? (<MarkdownContent>{projectContent}</MarkdownContent>) : (<div><h1>Loading...</h1></div>)}
-                    </div>
+                    {!projectLoading ? (<div id="md-content" dangerouslySetInnerHTML={{ __html: html }} />) : (<div><h1>Loading...</h1></div>)}
                 </Section>
 
                 <Spoiler title="You found me!">
@@ -77,7 +81,7 @@ const Home = () => {
                         <div id="scroll"></div>
                     </div> 
                 </Spoiler>
-            </motion.div>  
+            </motion.main>
         </React.Fragment>  
     )
 };

@@ -12,8 +12,8 @@ const About = () => {
 
     return (
         <React.Fragment>
-            <motion.div 
-                className="container" 
+            <motion.main
+                className="container"
                 variants={transition}
                 initial="initial"
                 animate="animate"
@@ -42,7 +42,7 @@ const About = () => {
                         </tbody>
                     </table>
                 </Section>
-            </motion.div>
+            </motion.main>
         </React.Fragment>
     )
 };

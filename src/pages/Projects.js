@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import MarkdownContent from "react-markdown";
 import { motion } from "framer-motion"
+import { Converter } from "showdown";
 
 import { useProjectContent, useStatusContent } from "../utilities/Fetch";
 import Spoiler from "../utilities/Spoiler";
@@ -10,14 +10,25 @@ const Projects = () => {
     const { projectContent, projectLoading } = useProjectContent();
     const { statusContent, statusLoading } = useStatusContent();
 
+    const converter = new Converter();
+    
+    // Settings
+    converter.setFlavor("github");
+    converter.setOption("openLinksInNewWindow", true);
+    converter.setOption("moreStyling", true);
+    converter.setOption("customizedHeaderId", true);
+
+    const projectHTML = converter.makeHtml(projectContent);
+    const statusHTML = converter.makeHtml(statusContent);
+
     useEffect(() => {
         document.title = "Projects - Riley Ziegler";
     }, []);
 
     return (
         <React.Fragment>
-            <motion.div 
-                className="container" 
+            <motion.main
+                className="container"
                 variants={transition}
                 initial="initial"
                 animate="animate"
@@ -26,17 +37,13 @@ const Projects = () => {
                 <h1 id="projects-header">What am I up to?!</h1>
 
                 <Spoiler title="Projects">
-                    <div id="md-content">
-                        {!projectLoading ? (<MarkdownContent>{projectContent}</MarkdownContent>) : (<div><h1>Loading...</h1></div>)}
-                    </div>
+                    {!projectLoading ? (<div id="md-content" dangerouslySetInnerHTML={{ __html: projectHTML }} />) : (<div><h1>Loading...</h1></div>)}
                 </Spoiler>
 
                 <Spoiler title="Status Updates" visible={true}>
-                    <div id="md-content">
-                        {!statusLoading ? (<MarkdownContent>{statusContent}</MarkdownContent>) : (<div><h1>Loading...</h1></div>)}
-                    </div>
+                    {!statusLoading ? (<div id="md-content" dangerouslySetInnerHTML={{ __html: statusHTML }} />) : (<div><h1>Loading...</h1></div>)}
                 </Spoiler>
-            </motion.div>
+            </motion.main>
         </React.Fragment>
     )
 };
