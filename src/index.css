@@ -85,7 +85,7 @@ img {
     padding-top: 3em;
     padding-left: 2em;
     height: 100dvh;
-    width: 22em;
+    width: 20em;
     z-index: 100;
     left: -2em; /* Make the div stick out to the left by 2em */
 }
@@ -95,7 +95,7 @@ img {
     cursor: pointer;
     margin: 10% 0;
     border-radius: 50%;
-    width: 12em;
+    width: 14em;
 }
 
 #info {
@@ -334,10 +334,9 @@ table {
 /* Popup */
 .popup {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 25%;
     width: 50%;
-    transform: translate(-50%, -50%);
     background-color: var(--popup-body);
     box-shadow: 0 0 1em var(--shadow);
     border-radius: 0.5em;
