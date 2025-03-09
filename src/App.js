@@ -22,7 +22,7 @@ function App() {
                     <motion.svg 
                         className="menu-toggle" 
                         variants={clickAnim} whileTap="click"
-                        viewBox="0 0 24 24" fill="none" 
+                        viewBox="0 0 24 24"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <path d="M4 18L20 18" stroke={menuColor} strokeWidth="2" strokeLinecap="round" />
