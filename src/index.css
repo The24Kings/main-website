@@ -145,11 +145,10 @@ li #nav {
 }
 
 .nav-container #social {
+    justify-content: flex-end;
     display: flex;
-    flex-direction: row;
-    position: absolute;
     margin: 0.5em;
-    bottom: 3em;
+    margin-bottom: 3.5em; /* Add margin-bottom to prevent cutting off */
 }
 
 .nav-container #social img {
@@ -167,7 +166,6 @@ li #nav {
     background-color: var(--background-secondary);
     color: var(--font-color);
     padding: 1%;
-    /* Top -> Left (Clockwise)*/
     border: none;
     border-radius: 0.5vw;
     font-size: 1.5vw;
@@ -184,10 +182,6 @@ li #nav {
 
 ::-webkit-scrollbar {
     width: 0;
-}
-
-#publications-list {
-    list-style-type: none;
 }
 
 /* Markdown */
@@ -329,6 +323,7 @@ table {
     background-color: var(--background-secondary);
     padding: 1%;
     font-size: 130%;
+    list-style-type: none;
 }
 
 /* Popup */
