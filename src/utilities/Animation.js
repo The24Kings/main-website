@@ -5,7 +5,7 @@ const transition = {
     animate: {
         opacity: 1,
         transition: {
-            duration: 0.8
+            duration: 2
         }
     },
     exit: {
