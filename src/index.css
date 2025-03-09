@@ -70,9 +70,11 @@ img {
     position: fixed;
     display: flex;
     padding-top: 3em;
+    padding-left: 2em;
     height: 100dvh;
-    width: 20em;
+    width: 22em;
     z-index: 100;
+    left: -2em; /* Make the div stick out to the left by 2em */
 }
 
 .nav-container img {
