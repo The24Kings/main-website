@@ -22,13 +22,8 @@ const Navigation = ({ isOpen, setIsOpen }) => {
     }, [isOpen]);
 
     const switchWindow = (path) => {
-        // Change the window location
         window.location.href = "/#/" + path;
-
-        // Close the menu with a delay
-        setTimeout(() => {
-            setIsOpen(false);
-        }, 50);
+        setIsOpen(false);
     };
 
     return (
@@ -41,6 +36,8 @@ const Navigation = ({ isOpen, setIsOpen }) => {
                 animate={{ x: isOpen ? 0 : '-100%' }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
             >
+                <div id="overlay" onClick={() => setIsOpen(false)}></div>
+
                 <img id="image" src="https://isoptera.lcsc.edu/~rjziegler/pictures/Logo.jpg" onClick={() => window.open("https://github.com/The24Kings")} title="Github" alt="Logo" />
 
                 <div id="info">
