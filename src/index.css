@@ -289,33 +289,38 @@ u:hover {
 
 /* Tables */
 
-table {
-    border-spacing: 0;
-}
-
 .list-content {
-    display: grid;
     background-color: var(--background-secondary);
-    margin: 0 0 1% 0;
+    flex-direction: column;
+    display: flex;
+    margin: 0 0 1%;
 }
 
 .list-title {
-    font-size: 150%;
     background-color: var(--background);
+    font-size: 150%;
     padding: 1%;
     margin: 0.5%;
 }
-
 #list-items {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 0.5% 0.5% 0.5%;
-    padding-left: 0;
 }
 
 #item {
-    font-size: 130%;
-    text-align: left;
     background-color: var(--background);
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center;
+    font-size: 150%;
+    flex: 1 1 10%;
     padding: 1%;
+}
+
+#item#clickable {
+    cursor: pointer;
 }
 
 #publications-list {
@@ -328,12 +333,14 @@ table {
 
 /* Popup */
 .popup {
+    background-color: var(--popup-body);
+    box-shadow: 0 0 1em var(--shadow);
+    flex-direction: column;
     position: fixed;
+    display: flex;
     top: 35%;
     left: 25%;
     width: 50%;
-    background-color: var(--popup-body);
-    box-shadow: 0 0 1em var(--shadow);
     border-radius: 0.5em;
     z-index: 1000;
 }
@@ -342,7 +349,7 @@ table {
     position: fixed;
     top: 0;
     height: 100%;
-    width: 80%;
+    width: 100%;
     cursor: default;
     z-index: 999;
 }

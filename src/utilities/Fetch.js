@@ -50,3 +50,26 @@ export const useStatusContent = () => {
 
     return { statusContent, statusLoading, error };
 };
+export const useCoursesData = () => {
+    const [coursesData, setCoursesData] = useState({});
+    const [coursesLoading, setCoursesLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        setCoursesLoading(true);
+
+        fetch("https://isoptera.lcsc.edu/~rjziegler/content/courses.json", { mode: "cors", cache: "no-cache" })
+            .then(response => response.json())
+            .then(data => { 
+                setCoursesData(data); 
+                setCoursesLoading(false);
+            })
+            .catch(e => { 
+                setCoursesData([]); 
+                setError(e);
+                setCoursesLoading(false);
+            });
+    }, []);
+
+    return { coursesData, coursesLoading, error };
+}
